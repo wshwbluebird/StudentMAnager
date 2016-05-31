@@ -365,20 +365,21 @@ void  Student::deleteInfo()
     score.savefile();
 }
 
+void printintroduction()
+{
+    cout<<"*****************************************课程管理***************************************************"<<endl;
+    cout<<"功能选择:"<<endl;
+    cout<<"1: 录入成绩"<<endl;
+    cout<<"2: 通过学号或姓名查询学生信息"<<endl;
+    cout<<"3: 通过宿舍号查找该宿舍学生信息"<<endl;
+    cout<<"4: 通过学号查询成绩"<<endl;
+    cout<<"5: 删除学生全部信息"<<endl;
+    cout<<"6: 按从高到低显示所有学生成绩信息"<<endl;
+    cout<<"*****************************************课程管理***************************************************"<<endl;
+}
+
 int main()
 {
-//    cout<<"Sefd";
-//    Score t;
-//    Score t;
-//    t.n=0;
-//    cout<<"SDfd"<<endl;
-//    t.ScoreInput();
-//    t.searchScore();
-    Student t;
-//    t.score.ScoreInput();
-//    t.score.ScoreInput();
-//    t.score.ScoreInput();
-    //t.searchScore();
-     t.deleteInfo();
+
     return 0;
 }
