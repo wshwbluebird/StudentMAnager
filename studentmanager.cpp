@@ -264,7 +264,7 @@ void Student::getScores()
     for (int i = 0; i < p ; ++i) {
         students[i].class_amount=0;
         students[i].points = 0;
-        cout<<score.n<<endl;
+        //cout<<score.n<<endl;
         for (int j = 0; j < score.n; ++j) {
             if(students[i].student_number==score.scores[j].student_number)
             {
@@ -296,7 +296,7 @@ void Student::searchScore()
                 <<students[i].curriculum[j].class_name<<"     综合成绩:  "<< students[i].curriculum[j].final_score
                         <<"    实得学分:  "<< students[i].curriculum[j].final_credit<<endl;
             }
-            cout<<"共修: "<<students[i].class_amount<<"科"<<"     "<<"实得总学分为:  "<<students[i].points;
+            cout<<"共修: "<<students[i].class_amount<<"科"<<"     "<<"实得总学分为:  "<<students[i].points<<endl;
             break;
         }
 
@@ -343,7 +343,7 @@ void  Student::deleteInfo()
            //break;
        }
     }
-    cout<<"delete1"<<endl;
+    //cout<<"delete1"<<endl;
     saveInfo();
     score.readfile();
     //cout<<score.n<<endl;
@@ -375,11 +375,35 @@ void printintroduction()
     cout<<"4: 通过学号查询成绩"<<endl;
     cout<<"5: 删除学生全部信息"<<endl;
     cout<<"6: 按从高到低显示所有学生成绩信息"<<endl;
+    cout<<"0: 退出系统"<<endl;
     cout<<"*****************************************课程管理***************************************************"<<endl;
 }
 
 int main()
 {
-
+   Student t;
+   while(1)
+   {
+       printintroduction();
+       int commend;
+       cout<<"请输入要功能序号: ";
+       cin>>commend;
+       if(commend == 0){
+           break;
+       }else if(commend==1){
+           t.score.ScoreInput();
+       }
+       else if(commend==2){
+           t.searchStudentInfoByNumber();
+       }else if(commend==3){
+           t.searchStudentInfoBydorm();
+       }else if(commend==4){
+           t.searchScore();
+       }else if(commend==5){
+           t.deleteInfo();
+       }else if(commend==6){
+           t.sortByScore();
+       }
+   }
     return 0;
 }
